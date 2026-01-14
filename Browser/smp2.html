@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M-SMP-2 • Create Mod SMP</title>
+  <style>
+    /* Minecraft-style font (local fallback friendly) */
+    @font-face {
+      font-family: 'Minecraft';
+      src: local('Minecraft'), local('Minecraftia'), local('Monocraft');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      /* Create Mod inspired palette (brass / copper / dark steel) */
+      --bg: #1b1a17;
+      --card: #24231f;
+      --accent: #caa85c; /* brass */
+      --accent-2: #b87333; /* copper */
+      --text: #f3efe4;
+      --muted: #b8b2a6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Minecraft', 'Minecraftia', 'Monocraft', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #020617, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 0;
+      text-align: center;
+      background: radial-gradient(circle at top, #2a281f, #14130f);
+      border-bottom: 1px solid #3a362a;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .header-content {
+      padding: 3.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .header-content {
+      padding: 3.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .ip-box {
+      display: inline-block;
+      background: linear-gradient(135deg, #2f2b20, #1f1d16);
+      border: 1px solid #3a362a;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #1f2937;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .status {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .status div {
+      background: var(--card);
+      border: 1px solid #1f2937;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      min-width: 200px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid #1f2937;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Create Mod themed animated banner (GIF) -->
+    <img src="CreateClock.gif" alt="Create Mod Machinery Banner" class="banner" />
+
+    <div class="header-content">
+      <!-- Create Mod Gear Logo -->
+      <svg width="96" height="96" viewBox="0 0 64 64" aria-label="M-SMP-2 Create Mod Logo">
+        <circle cx="32" cy="32" r="18" fill="#caa85c"/>
+        <circle cx="32" cy="32" r="10" fill="#24231f"/>
+        <g fill="#b87333">
+          <rect x="30" y="2" width="4" height="10"/>
+          <rect x="30" y="52" width="4" height="10"/>
+          <rect x="52" y="30" width="10" height="4"/>
+          <rect x="2" y="30" width="10" height="4"/>
+        </g>
+      </svg>
+
+      <h1 style="letter-spacing:2px;color:var(--accent);">M-SMP-2 • Create Mod SMP</h1>
+      <p>
+        Welcome to <strong>M-SMP-2</strong> — a Create Mod–focused SMP built around
+        automation, machinery, and large-scale engineering. Design factories,
+        spin gears, and bring contraptions to life.
+      </p>
+      <div class="ip-box">IP: M-Smp-2.aternos.me</div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Create Mod Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Create Mod Automation</h3>
+        <p>Build massive factories using gears, shafts, belts, and rotational power.</p>
+      </div>
+      <div class="card">
+        <h3>Technical SMP</h3>
+        <p>Encourages redstone logic, efficiency, and smart engineering solutions.</p>
+      </div>
+      <div class="card">
+        <h3>Multiplayer Collaboration</h3>
+        <p>Work together on megabases, shared infrastructure, and automated systems.</p>
+      </div>
+      <div class="card">
+        <h3>Vanilla+ Balance</h3>
+        <p>Enhanced gameplay without removing the classic survival Minecraft feel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Server Info</h2>
+    <div class="status">
+      <div>
+        <strong>Version</strong><br />
+        Modded (1.20.1)
+      </div>
+      <div>
+        <strong>Game Mode</strong><br />
+        Creative
+      </div>
+      <div>
+        <strong>Difficulty</strong><br />
+        Easy - Normal
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <section>
+    <h2>How to Join</h2>
+    <p>
+      To join <strong>M‑SMP‑2</strong>, make sure you are running Minecraft <strong>1.20.1</strong> with the required mods installed. Join the community Discord for setup help, updates, and server announcements.
+    </p>
+    <p style="margin-top: 1rem;"><a href="https://discord.gg/SXemtAjzAB" target="_blank" rel="noopener noreferrer">Join the Discord</a></p>
+  </section>
+
+  <footer>
+    © 2026 M‑SMP‑2 Create Mod SMP. Not affiliated with Mojang or Microsoft.
+  </footer>
+
+</body>
+</html>
